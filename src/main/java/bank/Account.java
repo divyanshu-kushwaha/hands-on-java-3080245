@@ -1,5 +1,7 @@
 package bank;
 
+import javax.xml.crypto.Data;
+
 public class Account {
   private int id;
   private String type;
@@ -33,6 +35,28 @@ public class Account {
 
   public void setBalance(double balance) {
     this.balance = balance;
+  }
+
+  public void deposit(double amount){
+    if (amount < 0)
+      System.out.println("Enter a valid amount.");
+    else {
+      double newBalance = balance + amount;
+      setBalance(newBalance);
+      DataSource.updateAccountBalance(id, newBalance);
+    }
+  }
+
+  public void withdraw(double amount){
+    if(amount < 0) System.out.println("Enter a valid amount.");
+    else if(amount > balance) {
+      System.out.println("Insufficient balance!");
+    }
+    else {
+      double newBalance = balance - amount;
+      setBalance(newBalance);
+      DataSource.updateAccountBalance(id, newBalance);
+    }
   }
 
 }

@@ -5,15 +5,15 @@ public class Customer {
   private String name;
   private String username;
   private String password;
-  private int accoundId;
+  private int accountId;
   private boolean authenticated;
 
-  public Customer(int id, String name, String username, String password, int accoundId) {
+  public Customer(int id, String name, String username, String password, int accountId) {
     this.id = id;
     this.name = name;
     this.username = username;
     this.password = password;
-    this.accoundId = accoundId;
+    this.accountId = accountId;
     this.authenticated = false;
   }
 
@@ -49,12 +49,12 @@ public class Customer {
     this.password = password;
   }
 
-  public int getAccoundId() {
-    return this.accoundId;
+  public int getAccountId() {
+    return this.accountId;
   }
 
-  public void setAccoundId(int accoundId) {
-    this.accoundId = accoundId;
+  public void setAccountId(int accountId) {
+    this.accountId = accountId;
   }
 
   public boolean isAuthenticated() {
